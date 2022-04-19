@@ -1,0 +1,31 @@
+.sort_block{
+  width: 152px;
+  height: 1028px;
+  background: #BDBDBD;
+  display: flex;
+  justify-content: center;
+  &_item{
+    margin-top: 35px;
+  }
+  &_title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+  }
+  &_btn{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 24.12px;
+    background: #4B51EF;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+}
