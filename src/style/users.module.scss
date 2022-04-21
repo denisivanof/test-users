@@ -1,6 +1,48 @@
 .users{
-
+  padding-top: 19px;
+  padding-left: 34px;
   &_title{
-
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 17px;
+  }
+  &_block{
+    width: 420px;
+    background: #F3F3F3;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &_field{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    & span{
+      color: #A3A3A3;
+    }
+  }
+  &_marginTop{
+    margin-top: 8px;
+  }
+  &_link{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    & a{
+      color: #4B51EF;
+    }
+  }
+  &_amountUsers{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    justify-content: end;
   }
 }

@@ -31,11 +31,12 @@ export interface userType {
 const UsersContainer: FC = () => {
 
     const [users, setUsers] = useState<Array<userType>>()
+    const [profile, setProfile] = useState<userType>()
+
     useEffect(()=>{
         const getUsers = async ()=>{
             try {
                 let res = await axios.get<Array<userType>>('https://jsonplaceholder.typicode.com/users')
-                console.log(res.data)
                 setUsers(res.data)
             } catch (e) {
                 console.log(e)
@@ -58,14 +59,17 @@ const UsersContainer: FC = () => {
             return 0
         }))
     }
+    const profileById = (id: number) => {
+        setProfile(users?.filter(item=>item.id === id)[0])
+    }
 
     return (
         <>
             <div style={{display: "flex"}}>
                 <Sort sortCity={sortCity} sortCompany={sortCompany}/>
                 <Routes>
-                    <Route path="/" element={<Users users={users}/>} />
-                    <Route path="/profile" element={<Profile/>} />
+                    <Route path="/" element={<Users users={users} profileById={profileById} />} />
+                    <Route path="/profile/:id" element={<Profile profile={profile}/>} />
                 </Routes>
             </div>
         </>

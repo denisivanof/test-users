@@ -1,0 +1,95 @@
+.profile{
+  padding-top: 19px;
+  padding-left: 36px;
+  &_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 438px;
+    & h3{
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    & button {
+      outline: none;
+      border: none;
+      cursor: pointer;
+      width: 116.67px;
+      height: 27.12px;
+      background: #4B51EF;
+      border-radius: 5px;
+
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: #FFFFFF;
+    }
+  }
+  &_block{
+    margin-top: 10px;
+    padding: 20px 6px 20px 12px;
+    width: 438px;
+    height: 463px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+  &_input {
+    margin-bottom: 10px;
+    & input{
+      width: 211px;
+      height: 22px;
+      background: #FFFFFF;
+      border: 1px solid #D8D8D8;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+    &_err{
+      border: 1px solid #D91313;
+    }
+    & div {
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 9px;
+    }
+  }
+  &_textarea{
+    & div {
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 9px;
+    }
+    & input{
+      width: 420px;
+      height: 55px;
+      background: #FFFFFF;
+      border: 1px solid #D8D8D8;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+  }
+  &_from_btn {
+    width: 85px;
+    height: 24.12px;
+    background: #52CF4F;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+  }
+  &_from_btn_dis {
+    width: 85px;
+    height: 24.12px;
+    background: #AFAFAF;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+  }
+}
