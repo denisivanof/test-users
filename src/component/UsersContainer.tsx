@@ -32,12 +32,15 @@ const UsersContainer: FC = () => {
 
     const [users, setUsers] = useState<Array<userType>>()
     const [profile, setProfile] = useState<userType>()
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(()=>{
         const getUsers = async ()=>{
             try {
+                setIsLoading(true)
                 let res = await axios.get<Array<userType>>('https://jsonplaceholder.typicode.com/users')
                 setUsers(res.data)
+                setIsLoading(false)
             } catch (e) {
                 console.log(e)
             }
@@ -68,7 +71,7 @@ const UsersContainer: FC = () => {
             <div style={{display: "flex"}}>
                 <Sort sortCity={sortCity} sortCompany={sortCompany}/>
                 <Routes>
-                    <Route path="/" element={<Users users={users} profileById={profileById} />} />
+                    <Route path="/" element={<Users users={users} profileById={profileById} isLoading={isLoading}/>} />
                     <Route path="/profile/:id" element={<Profile profile={profile}/>} />
                 </Routes>
             </div>

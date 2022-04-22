@@ -80,7 +80,7 @@ const Profile: FC<profileType> = ({profile}) => {
             type: 'text'
         },
     ]
-    const submit = (e: any) => {
+    const submit = (e: React.FormEvent) => {
         e.preventDefault()
         let isErr = 0
         const formData: any= {
@@ -91,6 +91,10 @@ const Profile: FC<profileType> = ({profile}) => {
                 formData[item.label] = item.value.value
                 isErr += 0
             }else {
+                item.action({value: item.value?.value, err: true})
+                isErr += 1
+            }
+            if(item.type === 'email' && item.value?.value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(item.value?.value)){
                 item.action({value: item.value?.value, err: true})
                 isErr += 1
             }
@@ -124,12 +128,13 @@ const Profile: FC<profileType> = ({profile}) => {
                             <input  disabled={disabled}  value={comment}
                                     onChange={(e)=>setComment(e.target.value)}/>
                         </div>
-                        <input className={disabled ? s.profile_from_btn_dis : s.profile_from_btn}
-                               disabled={disabled} type="submit" onClick={submit} value='Отправить'></input>
                     </form>
                 </div>
+                <div className={s.profile_from_btn_block}>
+                    <input className={disabled ? s.profile_from_btn_dis : s.profile_from_btn}
+                           disabled={disabled} type="submit" onClick={submit} value='Отправить'/>
+                </div>
             </div>
-
         </>
     );
 };

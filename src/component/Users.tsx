@@ -3,16 +3,19 @@ import {userType} from "./UsersContainer";
 import s from "../style/users.module.scss"
 import {Link} from "react-router-dom";
 
+
 interface usersType{
     users:Array<userType>| undefined,
-    profileById: (id: number)=>void
+    profileById: (id: number)=>void,
+    isLoading: boolean
 }
-const Users:FC<usersType> = ({users, profileById}) => {
+const Users:FC<usersType> = ({users, profileById, isLoading}) => {
     return (
         <>
             <div className={s.users}>
                 <h3 className={s.users_title}>Список пользователей</h3>
-                {users?.map(item=>{
+                {isLoading ? <div className={s.users_preloader}>Загрузка...</div>:
+                    users?.map(item=>{
                     return (
                         <div key={item.id} className={s.users_block}>
                             <div>

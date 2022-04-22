@@ -53,6 +53,7 @@
       font-weight: 400;
       font-size: 8px;
       line-height: 9px;
+      margin-bottom: 3px;
     }
   }
   &_textarea{
@@ -60,6 +61,7 @@
       font-weight: 400;
       font-size: 8px;
       line-height: 9px;
+      margin-bottom: 3px;
     }
     & input{
       width: 420px;
@@ -69,6 +71,10 @@
       box-sizing: border-box;
       border-radius: 5px;
     }
+  }
+  &_from_btn_block{
+    display: flex;
+    justify-content: end;
   }
   &_from_btn {
     width: 85px;
@@ -80,8 +86,10 @@
     font-size: 12px;
     line-height: 14px;
     color: #FFFFFF;
+    margin-top: 10px;
   }
   &_from_btn_dis {
+    margin-top: 10px;
     width: 85px;
     height: 24.12px;
     background: #AFAFAF;
